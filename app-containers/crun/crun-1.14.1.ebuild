@@ -32,12 +32,6 @@ BDEPEND="
 	virtual/pkgconfig
 "
 
-PATCHES=(
-#	# merged upstream: https://github.com/containers/crun/pull/1345
-#	# drop when we get 1.11.3
-#	"${FILESDIR}/${P}-caps.patch"
-)
-
 src_configure() {
 	local myeconfargs=(
 		--cache-file="${S}"/config.cache
