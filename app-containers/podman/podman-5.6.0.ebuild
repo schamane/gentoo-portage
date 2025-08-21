@@ -50,10 +50,6 @@ BDEPEND="
 	dev-go/go-md2man
 "
 
-PATCHES=(
-	"${FILESDIR}"/${PN}-5.5.2-togglable-seccomp.patch
-)
-
 CONFIG_CHECK="
 	~USER_NS
 "
@@ -68,10 +64,10 @@ src_prepare() {
 	default
 
 	# assure necessary files are present
-	local file
-	for file in apparmor_tag btrfs_installed_tag btrfs_tag systemd_tag; do
-		[[ -f hack/"${file}".sh ]] || die
-	done
+	#local file
+	#for file in apparmor_tag btrfs_installed_tag btrfs_tag systemd_tag; do
+	#	[[ -f hack/"${file}".sh ]] || die
+	#done
 
 	local feature
 	for feature in apparmor systemd; do
